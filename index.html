@@ -10,7 +10,44 @@
 </head>
 
 <body>
+    <h2>CALCOLA IL PREZZO DEL BIGLIETTO</h2>
 
+    <!-- SEZIONE CALCOLATORE -->
+
+    <div id="calculator-container">
+        <div>
+            <label for="name">Nome Completo:</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div>
+            <label for="kms">KM da percorrere:</label>
+            <input type="number" id="kms" name="kms" value="20">
+        </div>
+        <div>
+            <label for="age-options">Fascia d'età:</label>
+            <select>
+                <option value="young">Minorenne</option>
+                <option value="mid">Maggiorenne </option>
+                <option value="old">Over 65 </option>
+            </select>
+        </div>
+        <div>
+            <button id="btn-generate">Genera Biglietto</button>
+        </div>
+    </div>
+
+    <!-- SEZIONE TICKET -->
+
+    <h2>IL TUO BIGLIETTO</h2>
+
+    <div id="ticket-container">
+
+        <p>Nome Passeggero:</p>
+        <p>Offerta:</p>
+        <p>Carrozza:</p>
+        <p>Codice TR:</p>
+        <p>Prezzo Biglietto:</p>
+    </div>
 
     <script src="./js/script.js"></script>
 </body>
