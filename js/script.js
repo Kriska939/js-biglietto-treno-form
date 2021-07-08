@@ -40,6 +40,10 @@ var offerDisplay = document.getElementById("offerDisplay");
 var carDisplay = document.getElementById("carDisplay");
 var priceDisplay = document.getElementById("priceDisplay");
 
+// PER N CARROZZA, NON MI SERVONO DATI. DEVO RANDOMIZZARE
+
+var carNumber = Math.floor(Math.random() * 12) + 1;
+
 
 // 2 - Il calcolo del prezzo del biglietto deve essere effettuato al click. Perciò, step 2-3 li accorpo:
 
@@ -67,7 +71,7 @@ document.getElementById("btn-generate").addEventListener("click", function () {
 
     if (ageValue === "young") {
         discount = (price * 20) / 100;
-        price = price - discount;
+        price -= discount;
         typeRate = "Tariffa Minorenni";
 
         //check: 
@@ -77,15 +81,27 @@ document.getElementById("btn-generate").addEventListener("click", function () {
 
     } else if (ageValue === "old") {
         discount = (price * 40) / 100;
-        price = price - discount;
-        typeRate = "Tariffa Over65";
+        price -= discount;
+        typeRate = "Tariffa Over 65";
 
-        //check: 
+        //check:
         // console.log(discount);
         // console.log(price);
         // console.log(typeRate);
     }
 
+
+    // Price deve essere arrotondato
+
+    price = "€" + price.toFixed(2);
+
+
+    //STAMPO
+
+    nameDisplay.innerText = nameValue;
+    offerDisplay.innerText = typeRate;
+    carDisplay.innerText = carNumber;
+    priceDisplay.innerText = price;
 
 }
 
