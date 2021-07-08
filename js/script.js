@@ -33,6 +33,10 @@ var userName = document.getElementById("name");
 var kmsDistance = document.getElementById("kms");
 var userAge = document.getElementById("age");
 
+// VAR PER BONUS HIDDEN 
+
+var containerHidden = document.getElementById("container-hidden");
+
 // 2 - Il calcolo del prezzo del biglietto deve essere effettuato al click. Perciò, step 2-3 li accorpo:
 
 document.getElementById("btn-generate").addEventListener("click", function () {
@@ -104,6 +108,13 @@ document.getElementById("btn-generate").addEventListener("click", function () {
     priceDisplay.innerText = price;
     codeDisplay.innerText = "5673";
 
+    /* ----------------------------------------------------
+BONUS */
+    // nascondere la sezione del biglietto se non è ancora stato generato il biglietto stesso
+
+    containerHidden.classList.remove("hidden");
+
+
 }
 
 );
@@ -126,6 +137,7 @@ document.getElementById("btn-reset").addEventListener("click", function () {
     kmsDistance.value = "20";
     userAge.value = "young";
 
+    containerHidden.classList.add("hidden");
 }
 
 );

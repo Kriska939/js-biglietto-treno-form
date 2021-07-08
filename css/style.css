@@ -63,3 +63,7 @@ span {
     font-weight: lighter;
     color: #b91450;
 }
+
+.hidden {
+    visibility: hidden;
+}
