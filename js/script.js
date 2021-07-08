@@ -27,27 +27,26 @@ Bonus:
 
 // 1 - Chiedere i dati all'utente > form fatto su HTML 
 
-// VAR PER UTILIZZARE DATI DAL FORM:
-
-var userName = document.getElementById("name");
-var kmsDistance = document.getElementById("kms");
-var userAge = document.getElementById("age");
-
-// VAR PER LA STAMPA:
-
-var nameDisplay = document.getElementById("nameDisplay");
-var offerDisplay = document.getElementById("offerDisplay");
-var carDisplay = document.getElementById("carDisplay");
-var priceDisplay = document.getElementById("priceDisplay");
-
-// PER N CARROZZA, NON MI SERVONO DATI. DEVO RANDOMIZZARE
-
-var carNumber = Math.floor(Math.random() * 12) + 1;
 
 
 // 2 - Il calcolo del prezzo del biglietto deve essere effettuato al click. Perciò, step 2-3 li accorpo:
 
 document.getElementById("btn-generate").addEventListener("click", function () {
+
+    // VAR PER UTILIZZARE DATI DAL FORM: (posso inizializzare anche fuori, ma non è necessario in questo esercizio)
+
+    var userName = document.getElementById("name");
+    var kmsDistance = document.getElementById("kms");
+    var userAge = document.getElementById("age");
+
+    // VAR PER LA STAMPA:
+
+    var nameDisplay = document.getElementById("nameDisplay");
+    var offerDisplay = document.getElementById("offerDisplay");
+    var carDisplay = document.getElementById("carDisplay");
+    var priceDisplay = document.getElementById("priceDisplay");
+    var codeDisplay = document.getElementById("codeDisplay");
+
 
     // leggo i dati del form
     var nameValue = userName.value;
@@ -95,6 +94,9 @@ document.getElementById("btn-generate").addEventListener("click", function () {
 
     price = "€" + price.toFixed(2);
 
+    // PER N CARROZZA, NON MI SERVONO DATI. DEVO RANDOMIZZARE
+
+    var carNumber = Math.floor(Math.random() * 12) + 1;
 
     //STAMPO
 
@@ -102,6 +104,7 @@ document.getElementById("btn-generate").addEventListener("click", function () {
     offerDisplay.innerText = typeRate;
     carDisplay.innerText = carNumber;
     priceDisplay.innerText = price;
+    codeDisplay.innerText = "5673";
 
 }
 
@@ -109,3 +112,18 @@ document.getElementById("btn-generate").addEventListener("click", function () {
 
 /* ----------------------------------------------------
 BONUS */
+
+// aggiungere una funzione che ci permetta di resettare i campi del form ai valori originali
+
+
+document.getElementById("btn-reset").addEventListener("click", function () {
+
+    nameDisplay.innerText = "";
+    offerDisplay.innerText = "";
+    carDisplay.innerText = "";
+    codeDisplay.innerText = "";
+    priceDisplay.innerText = "";
+
+}
+
+);
