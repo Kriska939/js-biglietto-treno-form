@@ -15,10 +15,78 @@
     -tipo di offerta
     -n carrozza (random 1-12)
     -codice treno (n arbitrario fisso)
-    -prezzo finale (2 decimali)
+    -prezzo finale (2 decimali) 
 
 Bonus:
 - nascondere la sezione del biglietto se non è ancora stato generato il biglietto stesso
 - aggiungere una funzione che ci permetta di resettare i campi del form ai valori originali
 
 */
+
+// ----------------------------------------------------
+
+// 1 - Chiedere i dati all'utente > form fatto su HTML 
+
+// VAR PER UTILIZZARE DATI DAL FORM:
+
+var userName = document.getElementById("name");
+var kmsDistance = document.getElementById("kms");
+var userAge = document.getElementById("age");
+
+// VAR PER LA STAMPA:
+
+var nameDisplay = document.getElementById("nameDisplay");
+var offerDisplay = document.getElementById("offerDisplay");
+var carDisplay = document.getElementById("carDisplay");
+var priceDisplay = document.getElementById("priceDisplay");
+
+
+// 2 - Il calcolo del prezzo del biglietto deve essere effettuato al click. Perciò, step 2-3 li accorpo:
+
+document.getElementById("btn-generate").addEventListener("click", function () {
+
+    // leggo i dati del form
+    var nameValue = userName.value;
+    var kmsValue = kmsDistance.value;
+    var ageValue = userAge.value;
+
+    // creo var per il prezzo base e per quello scontato
+    var price = kmsValue * 0.21;
+    var discount;
+
+    // creo var per stampare tipo di tariffa
+    var typeRate = "Tariffa ordinaria"
+
+    // check
+    // console.log(nameValue);
+    // console.log(kmsValue);
+    // console.log(ageValue);
+    // console.log(price);
+
+    // calcolo della tariffa biglietto
+
+    if (ageValue === "young") {
+        discount = (price * 20) / 100;
+        price = price - discount;
+        typeRate = "Tariffa Minorenni";
+
+        //check: 
+        // console.log(discount);
+        // console.log(price);
+        // console.log(typeRate);
+
+    } else if (ageValue === "old") {
+        discount = (price * 40) / 100;
+        price = price - discount;
+        typeRate = "Tariffa Over65";
+
+        //check: 
+        // console.log(discount);
+        // console.log(price);
+        // console.log(typeRate);
+    }
+
+
+}
+
+);

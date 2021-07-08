@@ -24,8 +24,8 @@
             <input type="number" id="kms" name="kms" value="20">
         </div>
         <div>
-            <label for="age-options">Fascia d'età:</label>
-            <select>
+            <label for="age">Fascia d'età:</label>
+            <select id="age">
                 <option value="young">Minorenne</option>
                 <option value="mid">Maggiorenne </option>
                 <option value="old">Over 65 </option>
@@ -42,11 +42,11 @@
 
     <div id="ticket-container">
 
-        <p>Nome Passeggero:</p>
-        <p>Offerta:</p>
-        <p>Carrozza:</p>
-        <p>Codice TR:</p>
-        <p>Prezzo Biglietto:</p>
+        <p>Nome Passeggero: <span id="nameDisplay"></span></p>
+        <p>Offerta: <span id="offerDisplay"></span></p>
+        <p>Carrozza: <span id="carDisplay"></span></p>
+        <p>Codice TR: <span id="codeTR">5965</span></p>
+        <p>Prezzo Biglietto: <span id="priceDisplay"></span></p>
     </div>
 
     <script src="./js/script.js"></script>
