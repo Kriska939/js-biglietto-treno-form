@@ -106,3 +106,6 @@ document.getElementById("btn-generate").addEventListener("click", function () {
 }
 
 );
+
+/* ----------------------------------------------------
+BONUS */
