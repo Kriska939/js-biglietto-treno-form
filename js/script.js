@@ -27,17 +27,15 @@ Bonus:
 
 // 1 - Chiedere i dati all'utente > form fatto su HTML 
 
+// VAR PER UTILIZZARE DATI DAL FORM: (necessario impostare fuori da funzioni per poterle utilizzare in entrambi i click)
 
+var userName = document.getElementById("name");
+var kmsDistance = document.getElementById("kms");
+var userAge = document.getElementById("age");
 
 // 2 - Il calcolo del prezzo del biglietto deve essere effettuato al click. Perciò, step 2-3 li accorpo:
 
 document.getElementById("btn-generate").addEventListener("click", function () {
-
-    // VAR PER UTILIZZARE DATI DAL FORM: (posso inizializzare anche fuori, ma non è necessario in questo esercizio)
-
-    var userName = document.getElementById("name");
-    var kmsDistance = document.getElementById("kms");
-    var userAge = document.getElementById("age");
 
     // VAR PER LA STAMPA:
 
@@ -123,6 +121,10 @@ document.getElementById("btn-reset").addEventListener("click", function () {
     carDisplay.innerText = "";
     codeDisplay.innerText = "";
     priceDisplay.innerText = "";
+
+    userName.value = "";
+    kmsDistance.value = "20";
+    userAge.value = "young";
 
 }
 
